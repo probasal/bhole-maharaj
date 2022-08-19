@@ -8,6 +8,13 @@ const gallery = document.querySelectorAll(".image"),
     shadow = document.querySelector(".shadow");
 
 window.onload = () => {
+
+    window.location.href.split('#')[0]
+
+    window.scrollTo(0, 0);
+    
+    document.querySelector('.hero-section').style.height = window.innerHeight + 'px';
+
     for (let i = 0; i < gallery.length; i++) {
         totalImg.textContent = gallery.length; //passing total img length to totalImg variable
         let newIndex = i; //passing i value to newIndex variable
@@ -59,7 +66,7 @@ window.onload = () => {
                 nextBtn.style.display = "block";
                 previewBox.classList.remove("show");
                 shadow.style.display = "none";
-                document.querySelector("body").style.overflow = "scroll";
+                document.querySelector("body").style.overflowY = "scroll";
             }
         }
 
